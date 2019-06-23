@@ -1,0 +1,20 @@
+{
+  "name": "cards-for-humanity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc; node ./dist/cfh.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.0.10",
+    "@types/ws": "^6.0.1",
+    "discord.js": "github:discordjs/discord.js"
+  },
+  "devDependencies": {
+	"eslint": "^6.0.0"
+  }
+}
