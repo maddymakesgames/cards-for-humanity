@@ -1,9 +1,9 @@
 [{
-		"type": "white",
+		"type": 1,
 		"desc": ""
 	},
 	{
-		"type": "black",
+		"type": 0,
 		"desc": ""
-	},
+	}
 ]
