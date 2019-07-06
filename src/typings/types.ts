@@ -1,5 +1,6 @@
-import {Client, Guild, Base, Structures} from 'discord.js';
+import {Client, Guild, Base, Structures, Message, TextChannel, User, Collection, Collector} from 'discord.js';
 import * as fs from 'fs';
+import { CFHUser } from './user';
 
 export type Card = {
 	type:CardType
@@ -8,6 +9,8 @@ export type Card = {
 
 export class CFHClient extends Client {
 	public cards:Card[]
+	public commands:Collection<string, CFHCommand>;
+	public aliases:Collection<string, CFHCommand>;
 
 	constructor(...args: any[]) {
 		super(...args);
@@ -22,6 +25,19 @@ export class CFHClient extends Client {
 	}
 }
 
+export interface CFHCommand  {
+    aliases:string[];
+	name:string;
+	run(Client:CFHClient, message:Message, args:string[]):void;
+    
+}
+
+export interface CFHEvent {
+	name:string;
+	run(Client:CFHClient, event: TextChannel | CFHUser | Message):void;	
+	
+}
+
 export enum CardType {
 	Black,
 	White
@@ -29,8 +45,4 @@ export enum CardType {
 
 export class CFHGuild extends Guild {
 	public readonly client:CFHClient;
-	constructor(client:CFHClient, data:object) {
-		super(client, data);
-		this.client = client;
-	}
 }
