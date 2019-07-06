@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc; node ./dist/cfh.js"
+    "start": "tsc; node ./dist/cfh.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
